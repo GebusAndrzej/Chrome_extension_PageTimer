@@ -17,9 +17,16 @@ function checkUrl(tab) {
     chrome.tabs.get(id, tabinfo => {
         url = tabinfo.url.split('/');
 
-        chrome.storage.sync.get(['pages'], function(result) {
+        if (!url[2]) return
 
-            for (link of result.pages) {
+        chrome.storage.sync.get(['pages'], function(result) {
+            let pages=result.pages
+
+            if (!pages){
+                pages=[]
+            }
+
+            for (link of pages) {
                 //console.log(link+" :: "+url[2])
                 if (url[2].includes(link)) {
                     inject();
@@ -27,6 +34,7 @@ function checkUrl(tab) {
                 }
             }
         })
+        
     })
 }
 

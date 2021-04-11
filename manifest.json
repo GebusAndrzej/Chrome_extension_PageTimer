@@ -1,6 +1,6 @@
 {
    "name": "Page Timer",
-   "description": "zzzzz.",
+   "description": "Count time spent on page.",
    "version": "1.0.0",
    "manifest_version": 2,
    "icons": {

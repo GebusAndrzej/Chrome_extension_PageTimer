@@ -7,7 +7,11 @@ function updatePages(){
     container.innerText="";
 
     chrome.storage.sync.get(['pages'], function(result) {
-        for (let page of result.pages) {
+        let pages=result.pages
+
+        if (pages==undefined) {clearStorage();pages=[]}
+
+        for (let page of pages) {
             let clone= template.content.cloneNode(true);
 
             let h3 = clone.querySelectorAll("h3");
@@ -38,8 +42,9 @@ function addPage(){
 
             chrome.storage.sync.set({pages: list}, function() {
                 input.value = "";
+                console.log(list)
 
-                updatePages();
+                //updatePages();
             });
             
             
