@@ -1,0 +1,11 @@
+#ext-webpage-timer{
+    padding:10px;
+    background-color:black;
+    color:white;
+    position: fixed;
+    bottom:20px;
+    left:0;
+    z-index: 99999;
+    font-size: 20px;
+    font-family: arial,sans-serif;
+}

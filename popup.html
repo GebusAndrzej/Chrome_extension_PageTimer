@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Timer</title>
+
+    <style>
+      body,html{
+        width:370px;
+        min-height:200px;
+      }
+      body{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        background:
+          linear-gradient(to bottom, transparent 60%, rgb(112, 4, 116) ),
+          linear-gradient(to bottom left, transparent 60%, rgb(112, 4, 116) ),
+          linear-gradient(to top left, rgb(112, 4, 116),rgb(62, 135, 204));
+          
+        color:white;
+        padding-bottom:20px;
+        overflow-y: auto;
+      }
+      .pages{
+        width:70%;
+        padding:5px;
+        display:flex;
+        flex-direction: column;
+        justify-content: left;
+      }
+      .link{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height:25px;
+        margin-bottom: 3px;
+      }
+      .link button:last-child{
+        margin-left: auto;
+
+        padding:5px 10px;
+        font-weight: bold;
+        
+        border-width: 0;
+        outline: none;
+        border-radius: 2px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+        
+        background-color: #aa0202;
+        color: #ffffff;
+      }
+      #ext_add_page_button{
+        border-width: 0;
+        padding:5px 10px;
+        outline: none;
+        border-radius: 2px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+        
+        background-color: #00754e;
+        color: #ffffff;
+      }
+      #ext_add_page_input{
+        border:none;
+        outline: none;
+        border-radius: 2px;
+        padding:5px 10px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+      }
+    </style>
+
+  </head>
+  
+  <body>
+    <h1>Page Timer</h1>
+
+    <template id="linkTemplate">
+      <div class="link">
+        <h3></h3>
+        <button>x</button>
+      </div>
+    </template>
+
+    <div class="pages" id="pages">
+    
+
+    </div>
+    <div style="margin-top:10px">
+      <form target="">
+        <input type=text id="ext_add_page_input" active=true autofocus>
+        <input type="submit" value="+" id="ext_add_page_button">
+      </form>
+    </div>
+
+    <script src="./js/popup.js"></script>
+    
+  </body>
+</html>
+
